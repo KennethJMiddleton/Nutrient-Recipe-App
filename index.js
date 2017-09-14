@@ -1,5 +1,5 @@
 const USDA_List_URL = 'https://api.nal.usda.gov/ndb/list';
-const USDA_Nutrient_Search_URL = 'http://api.nal.usda.gov/ndb/nutrients/';
+const USDA_Nutrient_Search_URL = 'https://api.nal.usda.gov/ndb/nutrients/';
 var ID_List = [];
 
 function start() {
@@ -57,12 +57,40 @@ function handleNutrientButton() {
      return object.name === nQuery; 
     });
     var nID = nObject.id;
-    getFoodList(nID);
+    getFoodList(nID, displayFoodList);
   });
 }
 
-function getFoodList (ndbno) {
-  
+function getFoodList (search, callback) {
+  const foodList = {
+    url: USDA_Nutrient_Search_URL,
+    data: {
+      api_key: 'CpBKCl815ug26WnIn9qO20akfYXe0UL2L6dGQ0oO',
+      max: 20,
+      nutrients: `${search}`,
+      sort: 'c',
+      subset: 1
+    }, 
+    dataType: 'json',
+    type: 'GET',
+    success: callback,
+    error: (e) => console.log(e)
+  };
+  console.log('checkin', foodList);
+  $.ajax(foodList);
+}
+
+function displayFoodList (data) {
+  console.log("testing display:", data);
+  const results = data.report.foods.map((item, index) => renderFoodList(item));
+  $('.js-food-search-results').html(results);
+}
+
+function renderFoodList (food) {
+   console.log(food);
+  return `
+    <li>${food.name}</li>
+  `;
 }
 
 $(start);
