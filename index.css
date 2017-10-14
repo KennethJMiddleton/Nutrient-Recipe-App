@@ -1,3 +1,31 @@
 button {
   display: inline-block
 }
+
+section {
+  display: inline-block;
+}
+
+body {
+  background: url(http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture.jpg) no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.nutrient, .recipes {
+  width: 45%;
+  vertical-align: top;
+}
+
+h1{
+  text-align: center;
+  font-size: 3em;
+}
+
+h1, h2 {
+  font-family: 'Indie Flower', cursive;
+}
+
+h3,h4 {
+  font-family: 'Open Sans', sans-serif;
+}
