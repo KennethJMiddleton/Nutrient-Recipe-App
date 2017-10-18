@@ -98,7 +98,8 @@ function renderFoodList (food) {
 }
 
 function handleRecipeButton() {
-  $('.food-button').on('click', event => {
+  $('.recipe-finder').on('submit', event => {
+    event.preventDefault();
     $('.js-recipe-search-results').html(`<span class="sr-only">Loading...</span>`);
     const fQuery = $('#food-input').val();
     //console.log("food is",fQuery);
