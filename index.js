@@ -32,7 +32,7 @@ function renderIDs(list) {
 }
 
 function generateNutritionID(data) {
-  //console.log(data);
+  //console.log(data.list.item);
   const results = data.list.item.map((item, index) => renderIDs(item));
   ID_List = ID_List.slice(-98);
   //console.log("final list:",ID_List);
@@ -42,7 +42,7 @@ function generateNutritionID(data) {
 function populateNutientDropdown (list) {
   //console.log(list);
   const dropdown = list.map((item, index) =>renderDropdown(item));
-  console.log(dropdown);
+  //console.log(dropdown);
   $('.js-nutrient-input-list').html(dropdown);
 }
 
@@ -85,7 +85,7 @@ function getFoodList (search, callback) {
 }
 
 function displayFoodList (data) {
-  //console.log("testing display:", data);
+  //console.log("testing display:", data.report.foods);
   const results = data.report.foods.map((item, index) => renderFoodList(item));
   $('.js-food-search-results').html(results);
 }
@@ -93,7 +93,7 @@ function displayFoodList (data) {
 function renderFoodList (food) {
   //console.log(food);
   return `
-    <li>${food.name}</li>
+    <li><div class="food">${food.name}</div></li>
   `;
 }
 
@@ -131,11 +131,16 @@ function displayRecipeList(data) {
 function renderRecipeList (item) {
   //console.log('each item',item);
   return `
-  <div style='cursor: pointer;' onclick='getRecipe("${item.id}")' class='recipe'>
+  <div style='cursor: pointer;' class='recipe' id="${item.id}">
   <h4> <img src='${item.smallImageUrls}' alt='${item.recipeName}'/>${item.recipeName}</h4>
   </div>
   `;
 }
+
+$('.js-recipe-search-results').on('click', '.recipe', function(event) {
+  console.log($(this).attr('id'));
+  getRecipe($(this).attr('id'));
+})
 
 function getRecipe (recipeId) {
   const recipePage = {

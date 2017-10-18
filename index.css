@@ -7,19 +7,34 @@ section {
 }
 
 body {
-  background: url(http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture.jpg) no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
+  background-image: url(http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50%;
+}
+
+.Welcome {
+  width: 60%;
+  margin: auto;
+  text-align: center;
 }
 
 main {
-  background-color: rgba(255,255,255, .25); 
+  background-color: rgba(255,255,255, .5); 
   padding: 10px;
 }
 
 .nutrient, .recipes {
+  width: 100%;
+  vertical-align: top;
+}
+
+@media only screen and (min-width: 640px) {
+.nutrient, .recipes {
   width: 45%;
   vertical-align: top;
+}
 }
 
 h1{
@@ -27,10 +42,22 @@ h1{
   font-size: 3em;
 }
 
-h1, h2 {
+h1, h3 {
   font-family: 'Indie Flower', cursive;
 }
 
-h3,h4 {
+h2,h4 {
   font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+button {
+  
 }
