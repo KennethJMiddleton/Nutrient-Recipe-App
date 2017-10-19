@@ -19,15 +19,16 @@
         </h1>
         <h2>
           <div class="Welcome">
-          Welcome! Below you can seach for foods high in a particular nutrient. Once you have found a food that interests you, or if you have one in mind already, you may enter that into the recipe search. Happy Hunting and Good Eating!!!
+          Welcome! Below you can seach for foods high in a particular nutrient.<br> Once you have found a food that interests you, or if you have one in mind already, you may enter that into the recipe search. <br>Happy Hunting and Good Eating!!!
           </div>
         </h2>
       </section>
       <section class="bottom">
       <section class="nutrient">
         <h3>
-          Search here for your desired Nutrient.
+          Search here for your desired nutrient.
         </h3>
+        <div class="search">
         <select id="nutrient-input" class="js-nutrient-input-list"><option>Alanine</option>',
    <option>Alcohol, ethyl</option>',
    <option>Arginine</option>',
@@ -128,6 +129,7 @@
     <option>Zinc, Zn</option>'
    </select>
         <button type="button" class="nutrient-button">What Should I Eat?</button>
+        </div>
         <br>
         <h4>
         <div class = 'js-food-search-results'><ul></ul></div>
@@ -135,14 +137,16 @@
       </section>
       <section class="recipes">
         <h3>
-          Search here for Recipes.
+          Search here for recipes.
         </h3>
         <h4>
-          If you found a food from the list to the left, simply type the food name without all the descriptors listed.
+          If you found a food from the nutrient search, simply type the food name without all the descriptors listed.
         </h4>
         <form class="recipe-finder">
+        <div class="search">
         <input type=text id="food-input" class="js-food-input-list">
         <button type="submit" class="food-button">What Should I Make?</button>
+        </div>
         </form>
         <br>
         <h4>

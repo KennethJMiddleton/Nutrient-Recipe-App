@@ -56,8 +56,10 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+  text-align: center;
 }
 
-button {
-  
+.search {
+  width: 100%;
+  text-align: center;
 }
