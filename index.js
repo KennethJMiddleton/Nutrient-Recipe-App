@@ -93,7 +93,7 @@ function displayFoodList (data) {
 function renderFoodList (food) {
   //console.log(food);
   return `
-    <li><div class="food">${food.name}</div></li>
+    <div class="food"><li>${food.name}</li></div>
   `;
 }
 
@@ -141,7 +141,7 @@ function renderRecipeList (item) {
 $('.js-recipe-search-results').on('click', '.recipe', function(event) {
   console.log($(this).attr('id'));
   getRecipe($(this).attr('id'));
-})
+});
 
 function getRecipe (recipeId) {
   const recipePage = {
@@ -161,16 +161,7 @@ function getRecipe (recipeId) {
 
 function displayRecipe(data) {
   //console.log(data);
-  const result = renderRecipe(data);
-  $('.js-recipe-search-results').html(result);
-}
-
-function renderRecipe(recipe) {
-  console.log(recipe);
-  return `<div class='recipe'>
-  <h4> <a href='${recipe.source.sourceRecipeUrl}'>${recipe.name}</a> </h4>
-  </div>
-  `;
+   window.open(data.source.sourceRecipeUrl, '_blank');
 }
 
 $(start);

@@ -63,3 +63,8 @@ h3 {
   width: 100%;
   text-align: center;
 }
+
+.food {
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
