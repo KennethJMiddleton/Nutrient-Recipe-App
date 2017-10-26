@@ -133,13 +133,13 @@ function renderRecipeList (item) {
   //console.log('each item',item);
   return `
   <div style='cursor: pointer;' class='recipe' id="${item.id}">
-  <h4> <img src='${item.smallImageUrls}' alt='${item.recipeName}'/>${item.recipeName}</h4>
+  <h4> <img src='${item.smallImageUrls}' alt='${item.recipeName}'/><span class="result">${item.recipeName}</span></h4>
   </div>
   `;
 }
 
 $('.js-recipe-search-results').on('click', '.recipe', function(event) {
-  console.log($(this).attr('id'));
+  //console.log($(this).attr('id'));
   getRecipe($(this).attr('id'));
 });
 
