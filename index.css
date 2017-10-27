@@ -86,10 +86,12 @@ input {
 }
 
 .result {
-  padding: 10px;
-  vertical-align: middle;
+  padding-left: 10px;
+  position: absolute;
+  top: 30%;
 }
 
 .recipe {
-  vertical-align: middle;
+  display: block;
+  position: relative;
 }
