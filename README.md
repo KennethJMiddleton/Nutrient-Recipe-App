@@ -14,5 +14,5 @@ By being able to do these things users can naturally supplement their intake of 
 
 
 ### APIs used as Resources
-* 
-* 
+* United States Department of Agriculture Agricultural Research Service USDA Food Composition Databases
+* Yummly
